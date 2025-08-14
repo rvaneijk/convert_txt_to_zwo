@@ -1,0 +1,28 @@
+# TXT to ZWO Converter - .gitignore
+# Simple workout conversion script
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Virtual environment (.venv is our standard)
+.venv/
+
+# IDE files  
+.claude/
+.mypy_cache/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Workout directories (working and output directories)
+queue/          # Input files to be processed
+txt/            # Processed workout text files (moved from queue)
+zwo/            # Generated ZWO files and PNG visualizations
+
+# blog directory for documentation
+blog/

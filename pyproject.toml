@@ -1,0 +1,63 @@
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "txt-to-zwo-converter"
+version = "1.0.0"
+description = "A Python script that converts workout files from plain text format to Zwift ZWO format"
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [
+    {name = "TXT to ZWO Converter", email = "example@example.com"}
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+dependencies = [
+    "matplotlib>=3.5.0"
+]
+
+[project.optional-dependencies]
+dev = [
+    "flake8>=6.0.0",
+    "black>=23.0.0",
+    "isort>=5.12.0",
+    "mccabe>=0.7.0",
+    "mypy>=1.0.0",
+    "bandit>=1.7.0",
+    "pydocstyle>=6.0.0"
+]
+
+[project.scripts]
+txt-to-zwo = "convert_txt_to_zwo:main"
+
+[tool.black]
+line-length = 88
+
+[tool.isort]
+profile = "black"
+line_length = 88
+
+[tool.flake8]
+max-line-length = 88
+max-complexity = 10
+
+[tool.mypy]
+python_version = "3.9"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+
+[tool.pydocstyle]
+convention = "pep257"
+
+[tool.bandit]
+exclude_dirs = ["tests", ".venv"]
